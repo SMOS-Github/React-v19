@@ -1,7 +1,7 @@
 ﻿import React from 'react';
-import About from './About';
+import About from './Linkbout';
 import PropTypes from 'prop-types';
-import AlertPopUp from './AlertPopUp';
+import AlertPopUp from './LinklertPopUp';
 import {Link} from 'react-router-dom';
 export default function Navbar(props) {
 
@@ -17,7 +17,7 @@ export default function Navbar(props) {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className={`nav-a mx-1 text-${props.tx}`} to="/About">{props.AboutTitle} </Link>
+                                <Link className={`nav-a mx-1 text-${props.tx}`} to="/Linkbout">{props.AboutTitle} </Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <Link className={`nav-a dropdown-toggle text-${props.tx}`} to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
