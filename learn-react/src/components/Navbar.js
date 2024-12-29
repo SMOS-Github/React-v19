@@ -2,6 +2,7 @@
 import About from './About';
 import PropTypes from 'prop-types';
 import AlertPopUp from './AlertPopUp';
+import {Link} from 'react-router-dom';
 export default function Navbar(props) {
 
     return (
@@ -9,24 +10,24 @@ export default function Navbar(props) {
             
             <nav className={`navbar navbar-expand-lg navbar-${props.dark} bg-${props.light}`}>
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="/">{props.HomeTitle}</a>
+                    <Link className="navbar-brand" to="/">{props.HomeTitle}</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className={`nav-a mx-1 text-${props.tx}`} href="/About">{props.AboutTitle} </a>
+                                <Link className={`nav-a mx-1 text-${props.tx}`} to="/About">{props.AboutTitle} </Link>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className={`nav-a dropdown-toggle text-${props.tx}`} href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <Link className={`nav-a dropdown-toggle text-${props.tx}`} to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {props.DropdownTitle}
-                                </a>
+                                </Link>
                                 <ul className={`dropdown-menu bg-${props.light}`}>
-                                    <li><a className={`dropdown-item text-${props.tx}`} href="/">Action</a></li>
-                                    <li><a className={`dropdown-item text-${props.tx}`} href="/">Another action</a></li>
+                                    <li><Link className={`dropdown-item text-${props.tx}`} to="/">Action</Link></li>
+                                    <li><Link className={`dropdown-item text-${props.tx}`} to="/">Another action</Link></li>
                                     <li><hr className={`dropdown-divider text-${props.tx}`} /></li>
-                                    <li><a className={`dropdown-item text-${props.tx}`} href="/">Something else here</a></li>
+                                    <li><Link className={`dropdown-item text-${props.tx}`} to="/">Something else here</Link></li>
                                 </ul>
                             </li>
 

@@ -4,9 +4,26 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import TextArea from './components/TextArea';
 import AlertPopUp from './components/AlertPopUp';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 
 function App() {
+
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <Navbar mode={DarkMode} dark={dark} light={light} col={DarkMode} tx={textLight} />
+        },
+        {
+            path: "/AlertPopUp",
+            element: <AlertPopUp enable={pop} myText={!def ? "Ligth" : "Dark"} />
+        },
+        {
+            path: "/TextArea",
+            element: <TextArea dark={dark} light={textLight} color={cc} />
+        }
+    ])
+
 
     const [def, set] = useState(false);
     const [popUp, setPopUp] = useState(false);
@@ -31,9 +48,7 @@ function App() {
     return (
         <>
             <Navbar mode={DarkMode} dark={dark} light={light} col={DarkMode} tx={textLight} />
-            <AlertPopUp enable={pop} myText={!def ? "Ligth" : "Dark"} />
-            <TextArea dark={dark} light={textLight} color={cc} />
-            
+            <RouterProvider router={router}/>
         </>
     );
 
