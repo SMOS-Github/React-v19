@@ -1,7 +1,7 @@
 ﻿import React from 'react';
-import About from './Linkbout';
+import {About} from './Linkbout';
 import PropTypes from 'prop-types';
-import AlertPopUp from './LinklertPopUp';
+import {AlertPopUp} from './LinklertPopUp';
 import {Link} from 'react-router-dom';
 export default function Navbar(props) {
 

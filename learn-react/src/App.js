@@ -1,10 +1,9 @@
 ﻿import './App.css';
-import Home from './components/Home';
-import About from './components/About';
+import {About} from './components/About';
 import React, { useState } from 'react';
-import Navbar from './components/Navbar';
-import TextArea from './components/TextArea';
-import AlertPopUp from './components/AlertPopUp';
+import {Navbar} from './components/Navbar';
+import {TextArea} from './components/TextArea';
+import {AlertPopUp} from './components/AlertPopUp';
 import {
     BrowserRouter as Router,
     Switch,
@@ -35,15 +34,16 @@ function App() {
 
     return (
         <>
+            <Navbar mode={DarkMode} dark={dark} light={light} col={DarkMode} tx={textLight} />
+            <AlertPopUp enable={pop} myText={!def ? "Ligth" : "Dark"} />
+            <TextArea dark={dark} light={textLight} color={cc} />
+
             <Router>
-                <Navbar mode={DarkMode} dark={dark} light={light} col={DarkMode} tx={textLight} />
-                <AlertPopUp enable={pop} myText={!def ? "Ligth" : "Dark"} />
-                <div className="container my-3">
+
                 <Switch>
-                        <Route path="/" element={<TextArea dark={dark} light={textLight} color={cc} />}/>
-                        <Route path="/about" element={<About/>}/>
-                    </Switch>
-                </div>
+                    <Route path="about" element={<About />} />
+                </Switch>
+
             </Router>
         </>
     );
