@@ -4,11 +4,7 @@ import React, { useState } from 'react';
 import {Navbar} from './components/Navbar';
 import {TextArea} from './components/TextArea';
 import {AlertPopUp} from './components/AlertPopUp';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
 
@@ -37,14 +33,9 @@ function App() {
             <Navbar mode={DarkMode} dark={dark} light={light} col={DarkMode} tx={textLight} />
             <AlertPopUp enable={pop} myText={!def ? "Ligth" : "Dark"} />
             <TextArea dark={dark} light={textLight} color={cc} />
-
-            <Router>
-
-                <Switch>
-                    <Route path="about" element={<About />} />
-                </Switch>
-
-            </Router>
+            <Routes>
+                <Route path="/about" element={<About />} />
+            </Routes>
         </>
     );
 
