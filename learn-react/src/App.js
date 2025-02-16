@@ -1,9 +1,9 @@
 ﻿import './App.css';
-import {About} from './components/About';
+import About from './components/About';
 import React, { useState } from 'react';
-import {Navbar} from './components/Navbar';
-import {TextArea} from './components/TextArea';
-import {AlertPopUp} from './components/AlertPopUp';
+import Navbar from './components/Navbar';
+import TextArea from './components/TextArea';
+import AlertPopUp from './components/AlertPopUp';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -30,11 +30,12 @@ function App() {
 
     return (
         <>
-            <Navbar mode={DarkMode} dark={dark} light={light} col={DarkMode} tx={textLight} />
-            <AlertPopUp enable={pop} myText={!def ? "Ligth" : "Dark"} />
-            <TextArea dark={dark} light={textLight} color={cc} />
+    
             <Routes>
-                <Route path="/about" element={<About />} />
+                <Route path="/" element={<Navbar mode={DarkMode} dark={dark} light={light} col={DarkMode} tx={textLight} />}/>
+                <Route path="/" element={<AlertPopUp enable={pop} myText={!def ? "Ligth" : "Dark"} />}/>
+                <React path="/" element={<TextArea dark={dark} light={textLight} color={cc} />} />
+                <Route path="/about" element={<About/>}/>
             </Routes>
         </>
     );
